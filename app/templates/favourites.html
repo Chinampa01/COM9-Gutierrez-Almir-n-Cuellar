@@ -1,0 +1,47 @@
+{% extends 'header.html' %} {% block content %}
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2>Listado de <strong>FAVORITOS</strong></h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Imagen</th>
+                        <th>Nombre <i class="fa fa-sort"></i></th>
+                        <th>Status</th>
+                        <th>Última ubicación <i class="fa fa-sort"></i></th>
+                        <th>Episodio inicial </th>
+                        <th>Acciones </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for favourite in favourite_list %}
+                    <tr>
+                        <td>-</td>
+                        <td><img src="{{ favourite.url }}" alt="" style="max-width: 200px; max-height: 200px;"></td>
+                        <td>{{ favourite.name }}</td>
+                        <td>{{ favourite.status }}</td>
+                        <td>{{ favourite.last_location }}</td>
+                        <td>{{ favourite.first_seen }}</td>
+                        <td>
+                            <form method="post" action="{% url 'borrar-favorito' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="{{ favourite.id }}">
+                                <button type="submit" class="btn" style="color:red"><i class="material-icons">&#xE872;</i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
