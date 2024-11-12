@@ -37,14 +37,14 @@
         <h2 class="text-center">La búsqueda no arrojó resultados...</h2>
         {% else %} {% for img in images %}
         <div class="col">
-            {% if img.status == 'Alive' %}
+            {% if img.status  == 'Alive' %}
             <div class="card mb-3 ms-5" style="max-width: 540px;border-color: green;">
-            {% elif img.status == 'Dead' %}
-            <div class="card mb-3 ms-5" style="max-width: 540px;border-color: red ">
+            {% elif img.status  == 'Dead' %}
+            <div class="card mb-3 ms-5" style="max-width: 540px;border-color: red;">
             {% else %}
             <div class="card mb-3 ms-5" style="max-width: 540px;border-color: orange;">
-             {% endif %}
-                <div class="row g-0"> 
+            {% endif %}
+                <div class="row g-0">
                     <div class="col-md-4">
                         <img src="{{ img.url }}" class="card-img-top" alt="imagen">
                     </div>
