@@ -54,8 +54,8 @@
                             <h3 class="card-title">{{ img.name }}</h3>
                             <p class="card-text">
                                 <strong>
-                                            {% if img.status  == 'Alive' %} 🟢 {{ img.status }} 
-                                            {% elif img.status  == 'Dead' %} 🔴 {{ img.status }} 
+                                            {% if img.status == 'Alive' %} 🟢 {{ img.status }} 
+                                            {% elif img.status == 'Dead' %} 🔴 {{ img.status }} 
                                             {% else %} 🟠 {{ img.status }} 
                                             {% endif %}
                                         </strong>

@@ -19,7 +19,6 @@ def home(request):
 
 def search(request):
     search_msg = request.POST.get('query', '')
-
     # si el texto ingresado no es vacío, trae las imágenes y favoritos desde services.py,
     # y luego renderiza el template (similar a home).
     if (search_msg != ''):
@@ -46,4 +45,5 @@ def deleteFavourite(request):
 
 @login_required
 def exit(request):
-    pass
+    logout(request)
+    return redirect(home)
