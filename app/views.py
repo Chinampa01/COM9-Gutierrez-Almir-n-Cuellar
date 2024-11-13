@@ -41,7 +41,9 @@ def saveFavourite(request):
 
 @login_required
 def deleteFavourite(request,fav_id):
-    services.deleteFavourite(request, fav_id)
+    # Llama a la capa de servicios para eliminar el favorito con el ID proporcionado
+    services.deleteFavourite(fav_id)  # Pasa fav_id directamente
+    return redirect('favoritos')  # Redirige a la página de favoritos después de eliminar
 
 @login_required
 def exit(request):

@@ -34,6 +34,5 @@ def getAllFavourites(request):
         mapped_favourites = [translator.fromRepositoryIntoCard(fav) for fav in favourite_list]
         return mapped_favourites
 
-def deleteFavourite(request):
-    favId = request.POST.get('id')
-    return repositories.deleteFavourite(favId) # borramos un favorito por su ID.
+def deleteFavourite(fav_id):
+    return repositories.deleteFavourite(fav_id)  # Pasa directamente el ID

@@ -31,7 +31,7 @@
                         <td>{{ favourite.last_location }}</td>
                         <td>{{ favourite.first_seen }}</td>
                         <td>
-                            <form method="post" action="{% url 'borrar-favorito' %}">
+                            <form method="post" action="{% url 'borrar-favorito' favourite.id %}"> <!--agregamos el favourite.id-->
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value="{{ favourite.id }}">
                                 <button type="submit" class="btn" style="color:red"><i class="material-icons">&#xE872;</i></button>
