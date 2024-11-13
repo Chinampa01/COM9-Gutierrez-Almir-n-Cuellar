@@ -5,6 +5,7 @@ from ..utilities import translator
 from django.contrib.auth import get_user
 from ..transport import transport
 
+
 def getAllImages(input=None):
     # obtiene un listado de datos "crudos" desde la API, usando a transport.py.
     images = []
@@ -18,10 +19,9 @@ def getAllImages(input=None):
 
 # añadir favoritos (usado desde el template 'home.html')
 def saveFavourite(request):
-    fav = '' # transformamos un request del template en una Card.
-    fav.user = '' # le asignamos el usuario correspondiente.
-
-    return repositories.saveFavourite(fav) # lo guardamos en la base.
+    card = translator.fromTemplateIntoCard(request)
+    card.user = request.user  # Usa directamente request.user en lugar de get_user
+    return repositories.saveFavourite(card)  # Guarda en la base de datos
 
 # usados desde el template 'favourites.html'
 def getAllFavourites(request):
@@ -29,14 +29,9 @@ def getAllFavourites(request):
         return []
     else:
         user = get_user(request)
-
-        favourite_list = [] # buscamos desde el repositories.py TODOS los favoritos del usuario (variable 'user').
-        mapped_favourites = []
-
-        for favourite in favourite_list:
-            card = '' # transformamos cada favorito en una Card, y lo almacenamos en card.
-            mapped_favourites.append(card)
-
+        favourite_list = repositories.getAllFavourites(user)
+    
+        mapped_favourites = [translator.fromRepositoryIntoCard(fav) for fav in favourite_list]
         return mapped_favourites
 
 def deleteFavourite(request):
