@@ -11,35 +11,74 @@
 </head>
 
 <body>
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Proyecto TP</a>
+            <!-- Logo de la barra -->
+            <a class="navbar-brand" href="#">
+                <img src="https://1000marcas.net/wp-content/uploads/2022/04/Rick-and-Morty.png" 
+                     alt="Rick and Morty" 
+                     style="height: 40px; width: auto;">
+            </a>
+            <!-- Botón para versión móvil -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Enlaces de navegación -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Inicio -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index-page' %}">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index-page' %}">
+                            <img src="https://www.clipartmax.com/png/full/218-2180147_animated-house-download-rick-and-morty-house-transparent.png" 
+                                 alt="Inicio" 
+                                 style="height: 30px; width: auto;">
+                        </a>
                     </li>
+                    <!-- Galería -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><strong>Galería</strong></a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                            <img src="https://e1.pngegg.com/pngimages/4/543/png-clipart-rick-and-morty-hq-resource-monsters-illustration.png" 
+                                 alt="galeria" 
+                                 style="height: 30px; width: auto;">
+                        </a>
                     </li>
+                    <!-- Favoritos (sólo si está autenticado) -->
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'favoritos' %}">Favoritos</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'favoritos' %}">
+                            <img src="https://www.pngfind.com/pngs/m/678-6780064_transparent-rick-face-png-rick-and-morty-pixel.png" 
+                                 alt="favoritos" 
+                                 style="height: 30px; width: auto;">
+                        </a>
                     </li>
                     {% endif %}
+                    <!-- Salir o Iniciar sesión -->
                     <li class="nav-item">
                         {% if request.user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'exit' %}">Salir</a> {% else %}
-                        <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a> {% endif %}
+                        <a class="nav-link active" aria-current="page" href="{% url 'exit' %}">
+                            <img src="https://toppng.com/uploads/preview/rick-and-morty-transparent-png-fondos-de-pantalla-rick-and-morty-11563232588ssxitvsnqs.png" 
+                                 alt="salir" 
+                                 style="height: 30px; width: auto;">
+                        </a>
+                        {% else %}
+                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">
+                            <img src="https://toppng.com/uploads/preview/crossover-danny-phantom-and-rick-and-morty-image-rick-and-morty-11563223778l2dnjvjjby.png" 
+                                 alt="login" 
+                                 style="height: 30px; width: auto;">
+                        </a>
+                        {% endif %}
                     </li>
                 </ul>
-
-
             </div>
         </div>
     </nav>
 
-    {% block content %} {% endblock %} {% include "footer.html" %}
+    <!-- Contenido principal -->
+    {% block content %} {% endblock %}
+
+    <!-- Footer -->
+    {% include "footer.html" %}
+</body>
+
+</html>

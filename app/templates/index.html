@@ -1,9 +1,33 @@
 {% extends 'header.html' %} {% block content %} {% if request.user.is_authenticated %}
-<h2 class="text-center">Bienvenido {{ user.username | upper }}!</h2>
-{% else %}
-<h2 class="text-center">Bienvenido!</h2>
-{% endif %}
-<p class="text-center">
-    Mirá las imágenes desde <a href="{% url 'home' %}">este link.</a>
-</p>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        
+    </head>
+    <body>
+        
+        
+        <div class="text-center">
+            <img  src = "https://pngimg.com/uploads/rick_morty/rick_morty_PNG39.png" width="20%" height="10%"/>
+        </div>
+        <br>   
+        <br>   
+        <br>  
+        <h2 class="text-center"><!--Bienvenido {{ user.username | upper }}!--></h2>
+        {% else %}
+        <h2 class="text-center"><!--ienvenido!--></h2>
+        {% endif %}
+        <p class="text-center">
+            Mirá la galeria de imágenes desde <a href="{% url 'home' %}">este link.</a>
+        </p>
+        
+        
+        
+        
+        
+        
+        
+        {% endblock %}
+    </body>
+</html>
