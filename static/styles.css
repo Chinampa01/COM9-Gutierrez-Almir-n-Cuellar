@@ -1,6 +1,10 @@
+@font-face {
+    font-family: 'fuente'; /* Nombre personalizado para la fuente */
+    src: url("{% static 'Fuentes/fuente.ttf' %}") format('truetype');
+}
 body {
     background-color: gray;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'fuente', sans-serif;
     padding-top: 70px; /* Espacio para la barra fija */
 }
 
@@ -175,4 +179,12 @@ table.table td i {
 .navbar {
     z-index: 1030; /* Asegura que la barra esté siempre sobre otros elementos */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    font-family: 'fuente', serif;
+}
+
+p {
+    font-family: 'fuente', sans-serif;
 }
