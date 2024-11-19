@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'rickandmorty'; /* Nombre personalizado para la fuente */
+    src: url("{% static 'Fuentes/r&m.ttf' %}") format('truetype'); /* Ruta relativa */
+}
+
 body {
-    background-color: rgb(185, 45, 45);
-    font-family: 'get schwifty'; /* Usa la fuente personalizada como principal */
+    background-color: rgb(103, 0, 0);
+    font-family: 'rickandmorty'; /* Usa la fuente personalizada como principal */
     padding-top: 70px; /* Espacio para la barra fija */
 }
 
@@ -11,7 +16,7 @@ body {
 
 .table-wrapper {
     min-width: 1000px;
-    background: #7d0d0d;
+    background: #fff;
     padding: 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
