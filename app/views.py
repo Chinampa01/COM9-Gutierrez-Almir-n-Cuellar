@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from .layers.services import services
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.core.paginator import Paginator
 
 
 def index_page(request):
@@ -14,16 +15,25 @@ def index_page(request):
 def home(request):
     images = services.getAllImages()
     favourite_list = services.getAllFavourites(request) if request.user.is_authenticated else []
-    return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
+    paginator=Paginator(images, 5)
+    page_number=request.GET.get('page') or 1
+    page_obj=paginator.get_page(page_number)
+    page_images = page_obj.object_list
+
+    return render(request, 'home.html', { 'images': page_images, 'favourite_list': favourite_list , 'page_obj': page_obj , 'paginator': paginator })
 
 def search(request):
-    search_msg = request.POST.get('query', '')
+    search_msg = request.GET.get('query', '')
     # si el texto ingresado no es vacío, trae las imágenes y favoritos desde services.py,
     # y luego renderiza el template (similar a home).
     if (search_msg != ''):
         images = services.getAllImages(search_msg)  # Filtra imágenes según el término
         favourite_list = []
-        return render(request, 'home.html', {'images': images, 'favourite_list': favourite_list})
+        paginator=Paginator(images, 5)
+        page_number=request.GET.get('page')
+        page_obj=paginator.get_page(page_number)
+        page_images = page_obj.object_list
+        return render(request, 'home.html', {'images': page_images, 'favourite_list': favourite_list , 'page_obj': page_obj , 'paginator': paginator, 'search_msg': search_msg})
     else:
         return redirect('home')
 

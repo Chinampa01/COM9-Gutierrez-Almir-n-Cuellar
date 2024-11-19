@@ -8,6 +8,7 @@ class Favourite(models.Model):
     status = models.TextField()
     last_location = models.TextField()
     first_seen = models.TextField()
+    
 
     # Asociamos el favorito con el usuario en cuestión.
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

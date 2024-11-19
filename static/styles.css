@@ -3,7 +3,7 @@
     src: url("{% static 'Fuentes/fuente.ttf' %}") format('truetype');
 }
 body {
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
     font-family: 'fuente', sans-serif;
     padding-top: 70px; /* Espacio para la barra fija */
 }
@@ -48,7 +48,7 @@ body {
 }
 
 .search-box i {
-    color: #a0a5b1;
+    color: #ffffff;
     position: absolute;
     font-size: 19px;
     top: 8px;

@@ -4,28 +4,29 @@
 
     <div class="d-flex justify-content-end" style="margin-bottom: 1%; margin-right: 2rem;">
         <!-- Selector de página -->
-        <nav aria-label="...">
-            <ul class="pagination">
-                <li class="page-item disabled">
-                    <a class="page-link">⬅️</a>
-                </li>
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">➡️</a>
-                </li>
-            </ul>
-        </nav>
+        <nav aria-label="Pagination">
+            <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% if search_msg %}&query={{ search_msg }}{% endif %}">Primera</a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if search_msg %}&query={{ search_msg }}{% endif %}">Anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if search_msg %}&query={{ search_msg }}{% endif %}">Siguiente</a>
+            <a href="?page={{ paginator.num_pages }}{% if search_msg %}&query={{ search_msg }}{% endif %}">Última</a>
+        {% endif %}
+    </span>
+</div>
     </div>
 
     <div class="d-flex justify-content-center" style="margin-bottom: 1%">
         <!-- Buscador del sitio -->
-        <form class="d-flex" action="{% url 'buscar' %}" method="POST">
+        <form class="d-flex" action="{% url 'buscar' %}" method="GET"       >
             {% csrf_token %}
             <input class="form-control me-2" type="search" name="query" placeholder="Escribí una palabra" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
