@@ -1,12 +1,9 @@
-@font-face {
-    font-family: 'fuente'; /* Nombre personalizado para la fuente */
-    src: url("{% static 'Fuentes/fuente.ttf' %}") format('truetype');
-}
 body {
-    background-color: rgb(255, 255, 255);
-    font-family: 'fuente', sans-serif;
+    background-color: rgb(185, 45, 45);
+    font-family: 'get schwifty'; /* Usa la fuente personalizada como principal */
     padding-top: 70px; /* Espacio para la barra fija */
 }
+
 
 .table-responsive {
     margin: 30px 0;
@@ -14,7 +11,7 @@ body {
 
 .table-wrapper {
     min-width: 1000px;
-    background: #fff;
+    background: #7d0d0d;
     padding: 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
@@ -48,7 +45,7 @@ body {
 }
 
 .search-box i {
-    color: #ffffff;
+    color: transparent;
     position: absolute;
     font-size: 19px;
     top: 8px;
@@ -181,10 +178,3 @@ table.table td i {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
-    font-family: 'fuente', serif;
-}
-
-p {
-    font-family: 'fuente', sans-serif;
-}

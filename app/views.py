@@ -7,6 +7,7 @@ from django.contrib.auth import logout
 from django.core.paginator import Paginator
 
 
+
 def index_page(request):
     return render(request, 'index.html')
 
@@ -22,6 +23,9 @@ def home(request):
 
     return render(request, 'home.html', { 'images': page_images, 'favourite_list': favourite_list , 'page_obj': page_obj , 'paginator': paginator })
 
+def informe_tp(request):
+    return render(request, 'Informe TP.html')#Pagina del informe
+
 def search(request):
     search_msg = request.GET.get('query', '')
     # si el texto ingresado no es vacío, trae las imágenes y favoritos desde services.py,
@@ -36,6 +40,8 @@ def search(request):
         return render(request, 'home.html', {'images': page_images, 'favourite_list': favourite_list , 'page_obj': page_obj , 'paginator': paginator, 'search_msg': search_msg})
     else:
         return redirect('home')
+    
+
 
 
 # Estas funciones se usan cuando el usuario está logueado en la aplicación.

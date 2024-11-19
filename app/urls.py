@@ -13,4 +13,5 @@ urlpatterns = [
     path('favourites/delete/<int:fav_id>/', views.deleteFavourite, name='borrar-favorito'),  # Añadimos fav_id aquí
 
     path('exit/', views.exit, name='exit'),
+    path('Informe TP/', views.informe_tp, name='Informe TP'),
 ]

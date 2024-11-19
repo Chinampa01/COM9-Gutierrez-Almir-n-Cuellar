@@ -39,11 +39,11 @@
         {% else %} {% for img in images %}
         <div class="col">
             {% if img.status  == 'Alive' %}
-            <div class="card mb-3 ms-5" style="max-width: 540px;border-color: green;">
+            <div class="card mb-3 ms-5" style="background-color: rgb(77, 143, 71);max-width: 540px;border-color: green;">
             {% elif img.status  == 'Dead' %}
             <div class="card mb-3 ms-5" style="max-width: 540px;border-color: red;">
             {% else %}
-            <div class="card mb-3 ms-5" style="max-width: 540px;border-color: orange;">
+            <div class="card mb-3 ms-5" style="max-width: 540px;border-color: rgb(79, 75, 67);">
             {% endif %}
                 <div class="row g-0">
                     <div class="col-md-4">

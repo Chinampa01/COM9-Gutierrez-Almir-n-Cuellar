@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tu Nombre">
+    <meta name="description" content="Informe sobre el TP de la aplicación Rick and Morty">
+    <title>Informe TP - App Rick and Morty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #0000;
+            color: #000000;
+        }
+        header {
+            background-color: #39b408;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #444;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        ul {
+            margin: 10px 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <img src="blob:https://web.telegram.org/7f45c0e8-6272-439c-bb3d-3ec240acb7c7" alt=""  width="1320"  height="250">
+  </header>
+    <header>
+        <h1>Informe sobre el TP: Aplicación Rick and Morty</h1>
+        <p>Trabajo práctico final de la cursada Introducción a la Programación, Com 09, 2do Semestre 2024</p>
+    </header>
+
+    <main>
+        <section id="objetivo">
+            <style>
+                h2 {
+                    text-align: center;
+                }
+
+            </style>
+
+
+            <h2>Objetivo del Trabajo</h2>
+            <p>
+                El objetivo principal de este trabajo es implementar una aplicación web interactiva mediante una API (Un interfaz de programación que permite que diferentes aplicaciones de software se comuniquen entre sí. Por ejemplo: Una persona está en un restaurante y eligió algo del menú, pero necesita que esa información llegue a la cocina. En este caso, el mesero es igual a la API ya que funcionó como nexo entre el cliente y la cocina, además, cumple la misión de traer lo que pidió.). La misma, permite buscar personajes específicos de la serie “Rick y Morty”, mostrando información detallada sobre cada uno en un formato visual mediante tarjetas (Las “Cards”) y, para quienes hayan iniciado sesión, incluye la función de “Agregar a favoritos” al personaje que se desee.
+                La aplicación se desarrolló utilizando Django y Python en Visual Studio Code. Además, cuenta con la integración de diferentes capas y “Templates”.
+                
+            </p>
+            <p>
+                La aplicación se desarrolló utilizando Django y Python en Visual Studio Code. Además, cuenta con la integración de diferentes capas y “Templates”.    
+            </p>
+        </section>
+
+        <section id="tareas">
+            <style>
+                h1 {
+                    text-align: center; 
+                }
+            </style>
+            <h1>Tareas Realizadas</h1>
+          
+          <h3>Galería de Imágenes</h3>
+
+            <p> Para lograr que la app muestre las imágenes, se terminaron de implementar ciertas funciones en el archivo views.py, services.py y en el template home.html. <br>
+              <br>
+              En esta parte del proyecto se logró que la aplicación pudiera mostrar imágenes de los personajes de “Rick y Morty” de manera clara y organizada.
+              Para ello, se completó la función “GetAllImages” en la capa de servicios (services.py). La misma, a su vez, invoca la función “GetAllImages” de la capa de transporte (transport.py), la cual se encarga de comunicarse con la API y traer una lista de resultados con formato JSON 
+              <br>
+              <p>Una vez se obtuvo la lista “json_collection”: Se recorrió la misma con ayuda de un ciclo “for”. Luego, se utilizó la función “FromRequestIntoCard”, perteneciente a la capa “Translator.py” para que, de esta manera, se genere una lista de imágenes con formato de Card.</p>
+              <p>De esta forma, se logró que se mostrara la galería de imágenes como se muestra a continuación:</p>
+            </p>
+            <img src="https://camo.githubusercontent.com/a899e8c283f740842f0545ed91c5a2a83e30fbf867485402c7520c2f078edb57/68747470733a2f2f692e6962622e636f2f33636e737643342f726567312e706e67"  width="820"  height="250">
+             
+            <br>
+         
+            <h3>Organización de las tarjetas (Cards):</h3><br>
+            
+            <p>Otro de los objetivos del trabajo práctico es mostrar las tarjeras de los personajes de la serie “Rick y Morty”, destacando su estado de manera visualmente clara y atractiva. Para ello, se implementaron una serie de condicionales.</p>
+            
+            <p>Gracias a la documentación de “Bootstrap sobre card”, se utilizaron funciones como “Row” y “Col” para organizar las tarjetas en filas y columnas.</p>
+            
+            <p>Se implementó una condición de que, si no hay una imagen disponible (images | lenghy == 0), se muestre un mensaje centrado en pantalla “La busqueda no arrojó resultados”. Esto asegura que el usuario entienda que no se encontraron personajes en lugar de pensar que ocurrió un error.
+                De acuerdo con lo que se nos pidió con anterioridad, se realizó un condicional en el template de home.html, que nos permite estilizar el borde de las Cards según el estado en el que se encuentre el personaje.
+                </p>
+            <p>
+                ○ Si el borde es verde, es debido a que el personaje se encuentra vivo (Alive) 🟢
+                ○ Si es rojo, el personaje está muerto (Dead) 💀
+                ○ Naranja, para estados desconocidos o que no se definieron. 🤷‍♂️
+                
+            </p>
+            <br>
+
+            <h3>Buscar con filtro</h3>
+
+            <p>Para el opcional de que el buscador filtre las imágenes por el ingreso del usuario, se completó la función “def search(request)” 
+                desde la vista (views.py) invocando la función getAllImages alojada en la capa de servicios (services.py)
+                 utilizando como parámetro search_msg, lo cual arroja la lista de resultados asociadas a esa búsqueda, y 
+                 si no hubiera un ingreso, la búsqueda trae todas las imágenes. </p>
+                 
+            <p>A cotinuación se muestra como quedaría una búsqueda para el ingreso "JUDGE":</p>
+
+            <img src="https://camo.githubusercontent.com/f731f52a174b42e4573ed312df73bc08808affd317e4c82e5b11f16ea9dfc2e3/68747470733a2f2f692e6962622e636f2f7a66357a4450302f726567312e706e67" alt="" width="820" height="250">
+            
+            <h3>Inicio de Sesión</h3>
+            <br>
+            <p>Aca falta completar</p>
+            <br>
+            <h3>Favoritos</h3>
+            <br>
+            <p>Aca falta completar</p>
+            <br>
+            <h3>Paginación de Resultados</h3>
+            <br>
+            <p>Para la paginación de resultados, se realizó en principio la importación de la librería Paginator de Django. Seguido a ello, se complementaron ciertas variables en las funciones “def home(request)” y “def search(request)” de la capa services.py. 
+                Dado que la API no está entregando 20 datos, y para lograr paginar, definimos que se muestren solo 5 imágenes por página, para tener más de una página de resultados. 
+            </p>
+            <br>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusión</h2>
+            <p>
+                Este trabajo práctico nos permitió introducirnos en conceptos basicos y clave de desarrollo web utilizando Django. 
+                Logramos implementar una aplicación funcional que interactúa con una API externa, y que además 
+                gestiona permite interactuar con favoritos a usuarios registrados. Se logró comprender la lógica de estructuras
+                de capas, y cómo interactúan unas con otras a través de las funciones. 
+            </p>
+            <p>
+                Los principales desafíos fueron garantizar la correcta integración entre las capas de la aplicación,  
+                y mantener la consistencia de los datos.El resultado final cumple con la mayoría de los 
+                objetivos planteados y nos ofrece una oportunidad de seguir incorporando conocimiento en esta temática.
+            </p>
+            <br>
+            <br>
+            <br>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - TP Rick and Morty - Adriel Cuellar, Ariana Almiron, Fabian Gutierrez</p>
+    </footer>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick & Morty App - IP 2C2024</title>
-    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
+    {% load static %} {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} 
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -33,6 +33,8 @@
                             <img src="https://www.clipartmax.com/png/full/218-2180147_animated-house-download-rick-and-morty-house-transparent.png" 
                                  alt="Inicio" 
                                  style="height: 30px; width: auto;">
+                                 <br>
+                                 <p>Inicio</p>
                         </a>
                     </li>
                     <!-- Galería -->
@@ -41,6 +43,8 @@
                             <img src="https://e1.pngegg.com/pngimages/4/543/png-clipart-rick-and-morty-hq-resource-monsters-illustration.png" 
                                  alt="galeria" 
                                  style="height: 30px; width: auto;">
+                                 <br>
+                                 <p>Galería</p>
                         </a>
                     </li>
                     <!-- Favoritos (sólo si está autenticado) -->
@@ -50,6 +54,8 @@
                             <img src="https://www.pngfind.com/pngs/m/678-6780064_transparent-rick-face-png-rick-and-morty-pixel.png" 
                                  alt="favoritos" 
                                  style="height: 30px; width: auto;">
+                                 <br>
+                                 <p>Favoritos</p>
                         </a>
                     </li>
                     {% endif %}
@@ -60,12 +66,16 @@
                             <img src="https://toppng.com/uploads/preview/rick-and-morty-transparent-png-fondos-de-pantalla-rick-and-morty-11563232588ssxitvsnqs.png" 
                                  alt="salir" 
                                  style="height: 30px; width: auto;">
+                                 <br>
+                                 <p>Logout</p>
                         </a>
                         {% else %}
                         <a class="nav-link active" aria-current="page" href="{% url 'login' %}">
                             <img src="https://toppng.com/uploads/preview/crossover-danny-phantom-and-rick-and-morty-image-rick-and-morty-11563223778l2dnjvjjby.png" 
                                  alt="login" 
                                  style="height: 30px; width: auto;">
+                                 <br>
+                                 <p>Login</p>
                         </a>
                         {% endif %}
                     </li>
