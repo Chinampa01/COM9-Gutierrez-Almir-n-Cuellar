@@ -1,11 +1,6 @@
-@font-face {
-    font-family: 'rickandmorty'; /* Nombre personalizado para la fuente */
-    src: url("{% static 'Fuentes/r&m.ttf' %}") format('truetype'); /* Ruta relativa */
-}
-
 body {
-    background-color: rgb(103, 0, 0);
-    font-family: 'rickandmorty'; /* Usa la fuente personalizada como principal */
+    background-color: rgb(21, 0, 29);
+    font-family: 'get schwifty','sans serif'; 
     padding-top: 70px; /* Espacio para la barra fija */
 }
 
