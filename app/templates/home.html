@@ -1,8 +1,11 @@
 {% extends 'header.html' %} {% block content %}
 <main>
-    <h1 class="text-center">Buscador Rick & Morty</h1>
+    <h1 class="text-center" style="color: #32a8f0; text-shadow: 0 0 10px #13c4a3, 0 0 20px #32a8f0;">
+        Buscador <span style="color: #ff6347;">Rick & Morty</span>
+    </h1>
+    
 
-    <div class="d-flex justify-content-end" style="margin-bottom: 1%; margin-right: 2rem;">
+    <div class="d-flex justify-content-end" style="margin-bottom: 1%; margin-right: 2rem; color: green;">
         <!-- Selector de página -->
         <nav aria-label="Pagination">
             <div class="pagination">
@@ -21,7 +24,7 @@
             <a href="?page={{ paginator.num_pages }}{% if search_msg %}&query={{ search_msg }}{% endif %}">Última</a>
         {% endif %}
     </span>
-</div>
+        </div>
     </div>
 
     <div class="d-flex justify-content-center" style="margin-bottom: 1%">
@@ -73,7 +76,7 @@
                                 <input type="hidden" name="status" value="{{ img.status }}">
                                 <input type="hidden" name="last_location" value="{{ img.last_location }}">
                                 <input type="hidden" name="first_seen" value="{{ img.first_seen }}"> {% if img in favourite_list %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> {% else %}
+                                <button type="submit" class="btn btn-primary btn-sm float-left"  style="background: linear-gradient(45deg, #ff6347, #e74c3c); border: none;">✔️ En favoritos</button> {% else %}
                                 <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white">👽 Añadir a favoritos</button> {% endif %}
                             </form>
                         </div>

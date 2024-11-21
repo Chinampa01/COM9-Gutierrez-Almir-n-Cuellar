@@ -1,11 +1,26 @@
+<footer class="bg-dark text-white text-center text-lg-start fixed-bottom" style="border-top: 4px solid #03A9F4;">
+    <div class="text-center p-3 d-flex justify-content-between align-items-center" 
+         style="background-color: rgba(33, 37, 41, 0.9);">
+        <!-- Sección de información -->
+        <div style="display: flex; align-items: center;">
+            <img src="https://pngimg.com/uploads/rick_morty/rick_morty_PNG39.png" 
+                 alt="Rick and Morty" 
+                 style="height: 40px; margin-right: 10px;">
+            <strong>Introducción a la Programación | UNGS</strong>
+        </div>
 
-<footer class="bg-body-tertiary text-center text-lg-start fixed-bottom">
-    <div class="text-center p-3" style="display: flex; background-color: rgb(255 255 255 / 78%); justify-content: space-between;">
-        <strong>Introducción a la Programación | UNGS</strong>
-        <strong><a href="{% url 'Informe TP' %}">Ver informe.</a></strong>
-        <strong>{{ VERSION }}</strong>
+        <!-- Enlace al informe -->
+        <div>
+            <strong>
+                <a href="{% url 'Informe TP' %}" 
+                   style="color: #03A9F4; text-decoration: none;">🛸 Ver Informe</a>
+            </strong>
+        </div>
+
+        <!-- Versión -->
+        <div>
+        
+            <strong style="color: #00FF00;">Versión: {{ VERSION }}</strong>
+        </div>
     </div>
 </footer>
-</body>
-
-</html>

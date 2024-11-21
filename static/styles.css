@@ -1,8 +1,22 @@
 body {
-    background-color: rgb(21, 0, 29);
-    font-family: 'get schwifty','sans serif'; 
-    padding-top: 70px; /* Espacio para la barra fija */
+    background-color: #0b0016; /* Fondo oscuro inspirado en el espacio */
+    color: #e1e1e1; /* Texto blanco/gris claro para mayor contraste */
+    font-family: 'get schwifty', sans-serif; /* Fuente más enérgica */
+    padding-top: 70px;
 }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi18jMbMy3FCpxMeJg0wIz6PDB72mSAdrPBs-dWFaujI-GRgWiZQEH_9wEOSvsFMsoJ0hF4KQ93zJA8iWgprptnHegqQ0FrymDeP0RXf3EGD3MBpwV4m0ZeOvZApLYO5Q1GaJcHYv793uXFMh0gS4EsBMWWcCu4Gf5idUCvb4wHB1lHu_MYkjpBhgRLHQ/s3840/RICK%20AND%20MORTY%20GALAXY%20WALLPAPER%201272023.png') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.6; /* Para que no opaque el contenido */
+}
+
+
 
 
 .table-responsive {
@@ -178,3 +192,74 @@ table.table td i {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+button {
+    background: linear-gradient(45deg, #13c4a3, #32a8f0);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(0.50.1);
+    box-shadow: 0 0 20px #00ff00; /* Brillo estilo sci-fi */
+}
+
+.table-wrapper {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+table.table {
+    background: transparent;
+    border: 1px solid #32a8f0;
+    border-radius: 15px;
+}
+.navbar .nav-link img {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.navbar .nav-link img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #13c4a3);
+}
+
+
+
+
+/* Responsividad: Ajustar tamaño en pantallas pequeñas */
+@media (max-width: 768px) {
+    .rick-morty-pagination {
+        font-size: 14px;
+    }
+
+    .page-link {
+        padding: 5px 10px;
+    }
+}
+/* Fondo personalizado para el contenedor */
+.rick-morty-wrapper {
+    background: linear-gradient(145deg, #c6e2ff, #eff9ff); /* Fondo claro con degradado */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    border: 2px solid #03A9F4; /* Borde azul fluorescente */
+    color: #121212; /* Color de texto oscuro para contraste */
+}
+
+/* Tabla dentro del contenedor */
+.table-wrapper table {
+    background-color: white; /* Fondo de la tabla */
+    border-radius: 10px; /* Redondeo para armonizar */
+    overflow: hidden; /* Para evitar bordes exteriores */
+}
+
+/* Encabezado de tabla más estilizado */
+.table-wrapper .table-title h2 {
+    color: #03A9F4; /* Azul vibrante */
+    font-family: 'get schwifty', sans-serif; /* Fuente personalizada */
+    text-shadow: 0 0 5px rgba(3, 169, 244, 0.5); /* Efecto brillante */
+}

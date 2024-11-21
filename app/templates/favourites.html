@@ -1,7 +1,7 @@
 {% extends 'header.html' %} {% block content %}
 <div class="container-xl">
     <div class="table-responsive">
-        <div class="table-wrapper">
+        <div class="table-wrapper rick-morty-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8">
@@ -31,10 +31,10 @@
                         <td>{{ favourite.last_location }}</td>
                         <td>{{ favourite.first_seen }}</td>
                         <td>
-                            <form method="post" action="{% url 'borrar-favorito' favourite.id %}"> <!--agregamos el favourite.id-->
+                            <form method="post" action="{% url 'borrar-favorito' favourite.id %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value="{{ favourite.id }}">
-                                <button type="submit" class="btn" style="color:red"><i class="material-icons">&#xE872;</i></button>
+                                <button type="submit" class="btn" style="background: red; border-radius: 50%; box-shadow: 0 0 10px red;"><i class="material-icons">&#xE872;</i></button>
                             </form>
                         </td>
                     </tr>
@@ -44,4 +44,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
