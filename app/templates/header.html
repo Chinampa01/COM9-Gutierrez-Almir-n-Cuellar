@@ -18,7 +18,7 @@
             <a class="navbar-brand" href="#">
                 <img src="https://1000marcas.net/wp-content/uploads/2022/04/Rick-and-Morty.png" 
                      alt="Rick and Morty" 
-                     style="height: 40px; width: auto;">
+                     style="height: 150px; width: auto;">
             </a>
             <!-- Botón para versión móvil -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'index-page' %}">
                             <img src="https://www.clipartmax.com/png/full/218-2180147_animated-house-download-rick-and-morty-house-transparent.png" 
                                  alt="Inicio" 
-                                 style="height: 30px; width: auto;">
+                                 style="height: 60px; width: auto;">
                                  <br>
                                  <p>Inicio</p>
                         </a>
@@ -40,9 +40,9 @@
                     <!-- Galería -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
-                            <img src="https://e1.pngegg.com/pngimages/4/543/png-clipart-rick-and-morty-hq-resource-monsters-illustration.png" 
+                            <img src="https://pngimg.com/uploads/rick_morty/rick_morty_PNG29.png" 
                                  alt="galeria" 
-                                 style="height: 30px; width: auto;">
+                                 style="height: 70px; width: auto;">
                                  <br>
                                  <p>Galería</p>
                         </a>
@@ -51,9 +51,9 @@
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'favoritos' %}">
-                            <img src="https://www.pngfind.com/pngs/m/678-6780064_transparent-rick-face-png-rick-and-morty-pixel.png" 
+                            <img src="https://pngimg.com/uploads/rick_morty/rick_morty_PNG22.png" 
                                  alt="favoritos" 
-                                 style="height: 30px; width: auto;">
+                                 style="height: 70px; width: auto;">
                                  <br>
                                  <p>Favoritos</p>
                         </a>
@@ -63,17 +63,17 @@
                     <li class="nav-item">
                         {% if request.user.is_authenticated %}
                         <a class="nav-link active" aria-current="page" href="{% url 'exit' %}">
-                            <img src="https://toppng.com/uploads/preview/rick-and-morty-transparent-png-fondos-de-pantalla-rick-and-morty-11563232588ssxitvsnqs.png" 
+                            <img src="https://pngimg.com/uploads/rick_morty/rick_morty_PNG15.png" 
                                  alt="salir" 
-                                 style="height: 30px; width: auto;">
+                                 style="height: 70px; width: auto;">
                                  <br>
                                  <p>Logout</p>
                         </a>
                         {% else %}
                         <a class="nav-link active" aria-current="page" href="{% url 'login' %}">
-                            <img src="https://toppng.com/uploads/preview/crossover-danny-phantom-and-rick-and-morty-image-rick-and-morty-11563223778l2dnjvjjby.png" 
+                            <img src="https://pngimg.com/uploads/rick_morty/rick_morty_PNG41.png" 
                                  alt="login" 
-                                 style="height: 30px; width: auto;">
+                                 style="height: 70px; width: auto;">
                                  <br>
                                  <p>Login</p>
                         </a>
