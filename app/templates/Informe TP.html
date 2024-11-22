@@ -116,11 +116,41 @@
             color: #000;
             box-shadow: 0 4px 10px rgba(57, 255, 20, 0.7);
         }
+       
+        .image-container img {
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container img.secondary {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .image-container:hover img.primary {
+            display: none;
+        }
+
+        .image-container:hover img.secondary {
+            display: block;
+        }
+
+        .image-container {
+            position: relative;
+            width: 200px; /* Ajusta al tamaño de tus imágenes */
+            height: 200px; /* Ajusta al tamaño de tus imágenes */
+        }
     </style>
 </head>
 <body>
-  <header>
-    <img src="blob:https://web.telegram.org/7f45c0e8-6272-439c-bb3d-3ec240acb7c7" alt=""  width="1320"  height="250">
+    <div class="image-container">
+        <img src="https://i.postimg.cc/YSzC4cj2/img1.png" alt="Primera Imagen" class="primary" width="1320" , height="250">
+        <img src="https://i.postimg.cc/k4rYH4mw/img2.png" alt="Segunda Imagen" class="secondary" width="1320" , height="250">
+    </div>
+</body>
+<br>
+<br>
   </header>
     <header>
         <h1>Informe sobre el TP: Aplicación Rick and Morty</h1>
