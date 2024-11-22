@@ -230,11 +230,20 @@
             
             <h3>Inicio de Sesión</h3>
             <br>
-            <p>Aca falta completar</p>
+            <p>A los fines de habilitar la posibilidad del inició de sesión, dentro de la capa de vistas (views.py) 
+                se completó la función def exit con la importación previa de la función “logout” del módulo “auth”. 
+                Este módulo gestiona el inicio  y cierre de sesión de usuarios, como también autenticación de los mismos. </p>
             <br>
             <h3>Favoritos</h3>
             <br>
-            <p>Aca falta completar</p>
+            <p>Para lograr la funcionalidad de guardar imágenes en favoritos, se completó la función “saveFavourite” 
+                de la capa de servicios (services.py), invocando a su vez a la función que transforma la información
+                 que viene del template en formato “card”, para luego ser guardado en la base de datos. 
+                <br>
+                A su vez, se completó la función que muestra todos los favoritos del usuario, “getAllFavourites” , 
+                para lo cual se invocó a la función homónima de la capa “repositories”, así  luego retornar una lista
+                 mapeada en formato card a la capa vista. 
+                </p>
             <br>
             <h3>Paginación de Resultados</h3>
             <br>
@@ -248,13 +257,20 @@
             <h2>Conclusión</h2>
             <p>
                 Este trabajo práctico nos permitió introducirnos en conceptos basicos y clave de desarrollo web utilizando Django. 
-                Logramos implementar una aplicación funcional que interactúa con una API externa, y que además 
-                gestiona permite interactuar con favoritos a usuarios registrados. Se logró comprender la lógica de estructuras
+                Logramos implementar una aplicación funcional que se comunica con una API externa, y que además 
+                permite gestionar favoritos a usuarios registrados. Se logró comprender la lógica de estructuras
                 de capas, y cómo interactúan unas con otras a través de las funciones. 
+            <p>
+                A su vez, pudimos conocer herramientas para renovar la interfaz de los “Templates” usando mayormente framework CSS y Boostrap, 
+                con las cuales logramos renovar fondos, cambiar colores y fuentes de texto, agregar imágenes interactivas e incluso música al inicio.
+                También, el presente informe fué desarrollado en formato html como una oportunidad adicional para continuar desarrollando habilidades 
+                en esta materia.
+            </p>    
+        
             </p>
             <p>
                 Los principales desafíos fueron garantizar la correcta integración entre las capas de la aplicación,  
-                y mantener la consistencia de los datos.El resultado final cumple con la mayoría de los 
+                y mantener la consistencia de los datos. El resultado final cumple con la mayoría de los 
                 objetivos planteados y nos ofrece una oportunidad de seguir incorporando conocimiento en esta temática.
             </p>
             <br>
