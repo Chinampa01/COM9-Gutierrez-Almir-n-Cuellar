@@ -8,42 +8,113 @@
     <meta name="description" content="Informe sobre el TP de la aplicación Rick and Morty">
     <title>Informe TP - App Rick and Morty</title>
     <style>
+        /* General */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #0000;
-            color: #000000;
+            background: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            color: #e0e0e0;
         }
+
+        /* Header */
         header {
-            background-color: #39b408;
-            color: white;
-            padding: 20px 10px;
             text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #03A9F4;
+            border-bottom: 2px solid #03A9F4;
         }
+
+        header img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 28px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        header p {
+            font-size: 16px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        /* Main content */
         main {
             padding: 20px;
             max-width: 800px;
             margin: auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
+
         section {
             margin-bottom: 30px;
         }
+
         h1, h2, h3 {
-            color: #444;
+            color: #03A9F4;
+            text-shadow: 2px 2px 5px black;
         }
-        footer {
-            background-color: #333;
-            color: white;
+
+        h2 {
             text-align: center;
-            padding: 10px 0;
+            font-size: 24px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #e0e0e0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #03A9F4;
+            text-align: center;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+            border-top: 2px solid #03A9F4;
         }
-        ul {
-            margin: 10px 0 0 20px;
+
+        footer a {
+            text-decoration: none;
+            color: #03A9F4;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #39ff14;
+        }
+
+        /* Button */
+        .btn-back {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #03A9F4;
+            color: #000;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(3, 169, 244, 0.5);
+        }
+
+        .btn-back:hover {
+            background: #39ff14;
+            color: #000;
+            box-shadow: 0 4px 10px rgba(57, 255, 20, 0.7);
         }
     </style>
 </head>
@@ -164,7 +235,7 @@
 
     <footer>
         <p>
-            &copy; 2024 - TP Rick and Morty - Adriel Cuellar, Ariana Almiron, Fabian Gutierrez
+            &copy; 2024 - TP Rick and Morty - Adriel Cuellar, Fabian Gutierrez
         </p>
         <p>
             <a href="{% url 'index-page' %}" style="text-decoration: none; color: #03A9F4; font-weight: bold;">
